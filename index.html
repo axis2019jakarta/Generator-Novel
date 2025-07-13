@@ -6,8 +6,8 @@
     
     <!-- SEO (Search Engine Optimization) Tags -->
     <title>Nabila Studio Development AI - Dashboard & Creative Tools</title>
-    <meta name="description" content="Selamat datang di Nabila Studio Development AI. Alat AI lengkap untuk menulis novel, menghasilkan gambar, dan berbagai kebutuhan kreatif. Beli kunci API atau gunakan kunci Anda sendiri.">
-    <meta name="keywords" content="AI, Nabila Studio, Dashboard, AI Shop, Payment, Novel Writer, Image Generator, AI Tools, Prompt Engineering, OpenAI, Stability AI, Penulis, Seniman, Kecerdasan Buatan">
+    <meta name="description" content="Selamat datang di Nabila Studio Development AI. Alat AI lengkap untuk menulis novel (Cohere), menghasilkan gambar (Stability AI), Text-to-Speech (ElevenLabs), dan berbagai kebutuhan kreatif.">
+    <meta name="keywords" content="AI, Nabila Studio, Dashboard, AI Shop, Payment, Cohere, Stability AI, ElevenLabs, Novel Writer, Image Generator, TTS, AI Tools, Penulis, Seniman, Kecerdasan Buatan">
     <meta name="author" content="Nabila Studio Development">
     <meta name="robots" content="index, follow">
 
@@ -49,94 +49,40 @@
             overflow-x: hidden;
         }
 
-        /* --- Main Layout with Sidebar --- */
-        .page-wrapper {
-            display: flex;
-        }
-
+        .page-wrapper { display: flex; }
         .sidebar {
-            width: 260px;
-            background-color: var(--sidebar-bg);
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            padding: 1.5rem 1rem;
-            border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            z-index: 100;
+            width: 260px; background-color: var(--sidebar-bg); position: fixed;
+            top: 0; left: 0; height: 100vh; padding: 1.5rem 1rem;
+            border-right: 1px solid var(--border-color); display: flex;
+            flex-direction: column; z-index: 100;
         }
-
-        .sidebar-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+        .sidebar-header { text-align: center; margin-bottom: 2rem; }
         .sidebar-header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5em;
+            font-family: 'Orbitron', sans-serif; font-size: 1.5em;
             background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .sidebar-header h1 i {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 2em;
-        }
-
+        .sidebar-header h1 i { display: block; margin-bottom: 0.5rem; font-size: 2em; }
         .sidebar-nav a {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            display: flex; align-items: center; padding: 1rem; margin-bottom: 0.5rem;
+            color: var(--text-dark); text-decoration: none; border-radius: 8px;
+            font-weight: 600; transition: all 0.3s ease;
         }
-        .sidebar-nav a i {
-            width: 30px;
-            font-size: 1.2em;
-            margin-right: 1rem;
-        }
-        .sidebar-nav a:hover {
-            background-color: var(--bg-light);
-            color: var(--text-light);
-        }
-        .sidebar-nav a.active {
-            background-color: var(--bg-light);
-            color: var(--text-light);
-            box-shadow: 0 0 15px var(--primary-glow);
-        }
+        .sidebar-nav a i { width: 30px; font-size: 1.2em; margin-right: 1rem; }
+        .sidebar-nav a:hover { background-color: var(--bg-light); color: var(--text-light); }
+        .sidebar-nav a.active { background-color: var(--bg-light); color: var(--text-light); box-shadow: 0 0 15px var(--primary-glow); }
 
-        .main-content-area {
-            margin-left: 260px;
-            width: calc(100% - 260px);
-            padding: 2rem;
-            animation: fadeIn 1s ease-out;
-        }
-
+        .main-content-area { margin-left: 260px; width: calc(100% - 260px); padding: 2rem; animation: fadeIn 1s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        .page {
-            display: none;
-        }
-        .page.active {
-            display: block;
-            animation: contentFadeIn 0.5s;
-        }
+        .page { display: none; }
+        .page.active { display: block; animation: contentFadeIn 0.5s; }
         @keyframes contentFadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .page-header {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
+        .page-header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
         .page-header h2 { font-size: 2.2em; font-weight: 700; }
         .page-header p { color: var(--text-dark); }
         
-        /* --- Reusable Components & Form Elements --- */
         .form-section { background-color: var(--bg-light); padding: 1.5rem; border-radius: 15px; margin-bottom: 1.5rem; border: 1px solid var(--border-color); }
         .form-section h3 { font-size: 1.5em; margin-bottom: 1rem; border-left: 4px solid var(--primary-glow); padding-left: 10px; }
         .input-group { margin-bottom: 1rem; }
@@ -145,9 +91,7 @@
             width: 100%; padding: 0.8rem; background-color: var(--bg-dark); border: 1px solid var(--border-color);
             border-radius: 8px; color: var(--text-light); font-size: 1em; transition: all 0.3s ease;
         }
-        .input-group input:focus, .input-group textarea:focus, .input-group select:focus {
-            outline: none; border-color: var(--secondary-glow); box-shadow: 0 0 10px var(--secondary-glow);
-        }
+        .input-group input:focus, .input-group textarea:focus, .input-group select:focus { outline: none; border-color: var(--secondary-glow); box-shadow: 0 0 10px var(--secondary-glow); }
         textarea { resize: vertical; min-height: 120px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
         .btn {
@@ -158,40 +102,24 @@
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
         .btn:disabled { background: var(--text-dark); cursor: not-allowed; }
 
-        /* --- Dashboard Specific Styles --- */
         .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-        .stat-card {
-            background: var(--bg-light); padding: 1.5rem; border-radius: 15px;
-            border: 1px solid var(--border-color); transition: all 0.3s ease;
-        }
+        .stat-card { background: var(--bg-light); padding: 1.5rem; border-radius: 15px; border: 1px solid var(--border-color); transition: all 0.3s ease; }
         .stat-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
         .stat-card i { font-size: 2em; margin-bottom: 1rem; color: var(--primary-glow); }
         .stat-card h4 { font-size: 1.2em; color: var(--text-dark); }
         .stat-card .stat-value { font-size: 2.5em; font-weight: 700; }
         
-        /* --- AI Writer Specific Styles --- */
         .writer-layout { display: flex; gap: 2rem; }
         .writer-main { flex: 3; }
         .writer-sidebar { flex: 1; }
-        #novel-output-area {
-            width: 100%; min-height: 500px; background-color: #10101a; color: #f0f0f0; border: 1px solid var(--border-color);
-            border-radius: 8px; padding: 1rem; font-size: 1.1em; line-height: 1.6;
-        }
+        #novel-output-area { width: 100%; min-height: 500px; background-color: #10101a; color: #f0f0f0; border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; font-size: 1.1em; line-height: 1.6; }
         .action-buttons { display: flex; gap: 1rem; margin-top: 1rem; }
         #chapter-history-list { list-style: none; padding: 0; }
-        #chapter-history-list li {
-            background: var(--bg-dark); padding: 0.8rem; border-radius: 5px; margin-bottom: 0.5rem; cursor: pointer;
-            transition: background-color 0.3s; border-left: 3px solid var(--secondary-glow);
-        }
+        #chapter-history-list li { background: var(--bg-dark); padding: 0.8rem; border-radius: 5px; margin-bottom: 0.5rem; cursor: pointer; transition: background-color 0.3s; border-left: 3px solid var(--secondary-glow); }
         #chapter-history-list li:hover { background-color: #2a2a3f; }
         
-        /* --- Shop Specific Styles --- */
         .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .shop-item {
-            background: var(--bg-light); border-radius: 15px; overflow: hidden;
-            border: 1px solid var(--border-color); display: flex; flex-direction: column;
-            transition: all 0.3s ease;
-        }
+        .shop-item { background: var(--bg-light); border-radius: 15px; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: all 0.3s ease; }
         .shop-item:hover { transform: scale(1.03); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
         .shop-item-image { width: 100%; height: 200px; object-fit: cover; }
         .shop-item-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
@@ -201,16 +129,19 @@
         .shop-item-price { font-size: 1.5em; font-weight: 700; color: var(--secondary-glow); }
         .shop-item-btn { width: auto; padding: 0.5rem 1rem; }
 
-        /* --- Payment Specific Styles --- */
         .payment-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: flex-start; }
         #qr-code-container { text-align: center; }
         #qr-code-container img { max-width: 250px; border: 5px solid white; border-radius: 10px; }
-        #image-preview-container {
-            width: 100%; min-height: 150px; border: 2px dashed var(--border-color);
-            border-radius: 8px; display: flex; justify-content: center;
-            align-items: center; padding: 1rem;
-        }
+        #image-preview-container { width: 100%; min-height: 150px; border: 2px dashed var(--border-color); border-radius: 8px; display: flex; justify-content: center; align-items: center; padding: 1rem; }
         #image-preview { max-width: 100%; max-height: 250px; border-radius: 5px; }
+
+        .result-pane, .audio-result-pane { margin-top: 2rem; }
+        .result-pane #image-result { display: flex; justify-content: center; align-items: center; min-height: 300px; border: 2px dashed var(--border-color); border-radius: 10px; position: relative; }
+        .result-pane img { max-width: 100%; border-radius: 10px; animation: fadeIn 0.5s; }
+        #download-image-btn { position: absolute; bottom: 15px; right: 15px; background: rgba(0,0,0,0.7); color: white; border: 1px solid white; padding: 8px 15px; }
+        
+        .audio-player-container { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+        .audio-player-container audio { width: 100%; }
 
         .whatsapp-fab {
             position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white;
@@ -223,7 +154,6 @@
         @media (max-width: 992px) {
             .sidebar { transform: translateX(-100%); position: fixed; }
             .main-content-area { margin-left: 0; width: 100%; }
-            /* Add JS-controlled class to show sidebar on mobile */
             .sidebar.open { transform: translateX(0); }
             .writer-layout, .payment-container { flex-direction: column; grid-template-columns: 1fr; }
         }
@@ -232,66 +162,43 @@
 <body>
 
     <div class="page-wrapper">
-        <!-- Sidebar Navigation -->
         <nav class="sidebar">
-            <div class="sidebar-header">
-                <h1><i class="fa-solid fa-brain"></i>Nabila Studio</h1>
-            </div>
+            <div class="sidebar-header"><h1><i class="fa-solid fa-brain"></i>Nabila Studio</h1></div>
             <div class="sidebar-nav">
                 <a href="#" class="nav-link active" data-page="page-dashboard"><i class="fa-solid fa-house-chimney"></i> Dashboard</a>
                 <a href="#" class="nav-link" data-page="page-writer"><i class="fa-solid fa-book-sparkles"></i> AI Novel Writer</a>
                 <a href="#" class="nav-link" data-page="page-image"><i class="fa-solid fa-image"></i> Image Generator</a>
+                <a href="#" class="nav-link" data-page="page-tts"><i class="fa-solid fa-waveform"></i> AI Voice Generator</a>
                 <a href="#" class="nav-link" data-page="page-shop"><i class="fa-solid fa-store"></i> Shop</a>
                 <a href="#" class="nav-link" data-page="page-payment"><i class="fa-solid fa-wallet"></i> Beli Kunci API</a>
             </div>
         </nav>
 
-        <!-- Main Content Area -->
         <main class="main-content-area">
             
-            <!-- Dashboard Page -->
             <div id="page-dashboard" class="page active">
-                <div class="page-header">
-                    <h2>Dashboard</h2>
-                    <p>Selamat datang kembali, Kreator! Inilah pusat kendali kreatif Anda.</p>
-                </div>
+                <div class="page-header"><h2>Dashboard</h2><p>Selamat datang kembali, Kreator! Inilah pusat kendali kreatif Anda.</p></div>
                 <div class="stat-cards">
-                    <div class="stat-card">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <h4>Bab Dihasilkan</h4>
-                        <p class="stat-value" id="stat-chapters">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fa-solid fa-palette"></i>
-                        <h4>Gambar Dibuat</h4>
-                        <p class="stat-value">0</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fa-solid fa-key"></i>
-                        <h4>Status Kunci API</h4>
-                        <p class="stat-value" id="stat-api-status">Belum Ada</p>
-                    </div>
+                    <div class="stat-card"><i class="fa-solid fa-file-lines"></i><h4>Bab Dihasilkan</h4><p class="stat-value" id="stat-chapters">0</p></div>
+                    <div class="stat-card"><i class="fa-solid fa-palette"></i><h4>Gambar Dibuat</h4><p class="stat-value" id="stat-images">0</p></div>
+                    <div class="stat-card"><i class="fa-solid fa-microphone-lines"></i><h4>Audio Dihasilkan</h4><p class="stat-value" id="stat-audios">0</p></div>
+                    <div class="stat-card"><i class="fa-solid fa-key"></i><h4>Status Kunci API</h4><p class="stat-value" id="stat-api-status">Belum Ada</p></div>
                 </div>
-                <div class="form-section">
-                    <h3><i class="fa-solid fa-rocket"></i> Akses Cepat</h3>
-                    <div class="grid">
-                        <button class="btn" onclick="navigateToPage('page-writer')">Mulai Menulis Novel</button>
-                        <button class="btn" onclick="navigateToPage('page-image')">Buat Gambar AI</button>
-                    </div>
-                </div>
+                <div class="form-section"><h3><i class="fa-solid fa-rocket"></i> Akses Cepat</h3><div class="grid">
+                    <button class="btn" onclick="navigateToPage('page-writer')">Mulai Menulis Novel</button>
+                    <button class="btn" onclick="navigateToPage('page-image')">Buat Gambar AI</button>
+                    <button class="btn" onclick="navigateToPage('page-tts')">Buat Suara AI</button>
+                </div></div>
             </div>
 
-            <!-- AI Writer Page -->
             <div id="page-writer" class="page">
-                 <div class="page-header">
-                    <h2>AI Novel Writer</h2>
-                    <p>Wujudkan dunia fiksi Anda, bab demi bab, dengan kekuatan AI.</p>
-                </div>
+                 <div class="page-header"><h2>AI Novel Writer (Cohere)</h2><p>Wujudkan dunia fiksi Anda, bab demi bab, dengan kekuatan AI Cohere.</p></div>
                 <div class="writer-layout">
                     <div class="writer-main">
                         <form id="novel-form">
-                           <div class="form-section"><h3><i class="fa-solid fa-key"></i> Kunci API OpenAI</h3><div class="input-group"><label for="openai-key">Masukkan Kunci API OpenAI Anda</label><input type="password" id="openai-key" placeholder="sk-xxxx" required></div></div>
-                           <div class="form-section"><h3><i class="fa-solid fa-feather-pointed"></i> Detail Dasar</h3><div class="grid"><div class="input-group"><label for="author">Nama Penulis (Author)</label><input type="text" id="author" placeholder="Contoh: Nabila Ahmad"></div><div class="input-group"><label for="genre">Genre Cerita</label><input type="text" id="genre" placeholder="Contoh: Fantasi Gelap"></div></div></div>
+                           <div class="form-section"><h3><i class="fa-solid fa-key"></i> Kunci API Cohere</h3><div class="input-group"><label for="cohere-key">Masukkan Kunci API Cohere Anda</label><input type="password" id="cohere-key" placeholder="xxxxxxxxxxxx" required></div></div>
+                           <!-- Form sections for novel details are identical to the previous version -->
+                           <div class="form-section"><h3><i class="fa-solid fa-feather-pointed"></i> Detail Dasar</h3><div class="grid"><div class="input-group"><label for="author">Nama Penulis (Author)</label><input type="text" id="author" placeholder="Contoh: Nabila Ahmad"></div><div class="input-group"><label for="genre">Genre Cerita</label><input type="text" id="genre" placeholder="Contoh: Fantasi Gelap, Roman Siberpunk"></div></div></div>
                            <div class="form-section"><h3><i class="fa-solid fa-users"></i> Karakterisasi</h3><div class="grid"><div class="input-group"><label for="protagonist">Protagonis</label><textarea id="protagonist" placeholder="Jelaskan karakter utama..."></textarea></div><div class="input-group"><label for="antagonist">Antagonis</label><textarea id="antagonist" placeholder="Jelaskan penentang utama..."></textarea></div><div class="input-group"><label for="foil">Karakter Foil</label><textarea id="foil" placeholder="Jelaskan karakter kontras..."></textarea></div></div><div class="input-group"><label for="other-chars">Karakter Lainnya</label><textarea id="other-chars" placeholder="Pisahkan dengan baris baru..."></textarea></div></div>
                            <div class="form-section"><h3><i class="fa-solid fa-map-location-dot"></i> Latar Cerita</h3><div class="input-group"><label for="setting">Setting Tempat & Waktu</label><textarea id="setting" placeholder="Contoh: Sebuah kota..."></textarea></div></div>
                            <div class="form-section"><h3><i class="fa-solid fa-book-open-reader"></i> Plot Bab Saat Ini</h3><div class="grid"><div class="input-group"><label for="conflict-bg">Latar Konflik</label><textarea id="conflict-bg" placeholder="Peristiwa masa lalu..."></textarea></div><div class="input-group"><label for="conflict">Konflik Utama</label><textarea id="conflict" placeholder="Tantangan spesifik..."></textarea></div><div class="input-group"><label for="climax">Klimaks</label><textarea id="climax" placeholder="Puncak ketegangan..."></textarea></div><div class="input-group"><label for="plot-twist">Plot Twist</label><input type="text" id="plot-twist" placeholder="Kejutan tak terduga..."></div><div class="input-group"><label for="resolution">Resolusi</label><textarea id="resolution" placeholder="Bagaimana konflik usai..."></textarea></div></div></div>
@@ -299,13 +206,10 @@
                            <button type="submit" class="btn btn-primary" id="generate-novel-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Tulis Bab <span id="chapter-number-display">1</span>!</button>
                         </form>
                     </div>
-                    <div class="writer-sidebar">
-                        <div class="form-section"><h3><i class="fa-solid fa-history"></i> Riwayat Bab</h3><ul id="chapter-history-list"></ul></div>
-                    </div>
+                    <div class="writer-sidebar"><div class="form-section"><h3><i class="fa-solid fa-history"></i> Riwayat Bab</h3><ul id="chapter-history-list"></ul></div></div>
                 </div>
                 <div class="output-pane" style="margin-top: 2rem;">
-                    <h3><i class="fa-solid fa-file-alt"></i> Hasil Tulisan AI</h3>
-                    <textarea id="novel-output-area" readonly placeholder="Hasil tulisan AI akan muncul di sini secara real-time..."></textarea>
+                    <h3><i class="fa-solid fa-file-alt"></i> Hasil Tulisan AI</h3><textarea id="novel-output-area" readonly placeholder="Hasil tulisan AI akan muncul di sini..."></textarea>
                     <div class="action-buttons">
                         <button class="btn" id="continue-btn" style="display: none; background: #28a745; color: white;"><i class="fa-solid fa-forward"></i> Lanjutkan</button>
                         <button class="btn" id="new-chapter-btn" style="display: none; background: #007bff; color: white;"><i class="fa-solid fa-plus-circle"></i> Bab Baru</button>
@@ -313,322 +217,262 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Image Generator Page -->
+            
             <div id="page-image" class="page">
-                 <div class="page-header">
-                    <h2>AI Image Generator</h2>
-                    <p>Ubah imajinasi Anda menjadi gambar visual yang menakjubkan.</p>
-                </div>
-                <div class="form-section"><h3><i class="fa-solid fa-key"></i> Kunci API Stability AI</h3><div class="input-group"><label for="stability-key">Masukkan Kunci API Stability AI Anda</label><input type="password" id="stability-key" placeholder="sk-xxxx" required></div></div>
-                <div class="form-section"><h3><i class="fa-solid fa-paint-brush"></i> Deskripsi Gambar</h3><div class="input-group"><label for="image-prompt">Prompt Utama</label><textarea id="image-prompt" placeholder="Contoh: A hyper-detailed photorealistic portrait..."></textarea></div><div class="input-group"><label for="negative-prompt">Prompt Negatif</label><input type="text" id="negative-prompt" placeholder="Contoh: blurry, ugly..."></div><div class="grid"><div class="input-group"><label for="style-preset">Gaya Artistik</label><select id="style-preset"><option value="photographic">Fotografi</option><option value="cinematic">Sinematik</option><option value="anime">Anime</option><option value="fantasy-art">Seni Fantasi</option><option value="comic-book">Buku Komik</option><option value="digital-art">Seni Digital</option><option value="3d-model">Model 3D</option></select></div><div class="input-group"><label for="aspect-ratio">Rasio Aspek</label><select id="aspect-ratio"><option value="1:1">Persegi (1024x1024)</option><option value="16:9">Lanskap (1536x864)</option><option value="9:16">Potret (864x1536)</option></select></div></div></div>
-                <button class="btn btn-primary" onclick="generateImage()"><i class="fa-solid fa-camera-retro"></i> Hasilkan Gambar!</button>
-                <div class="result-pane" style="margin-top: 2rem;"><h3><i class="fa-solid fa-image"></i> Hasil Gambar</h3><div id="image-result"><p>Gambar yang dihasilkan akan muncul di sini.</p></div></div>
+                 <div class="page-header"><h2>AI Image Generator (Stability)</h2><p>Ubah imajinasi Anda menjadi gambar visual yang menakjubkan.</p></div>
+                 <div class="form-section"><h3><i class="fa-solid fa-key"></i> Kunci API Stability AI</h3><div class="input-group"><label for="stability-key">Masukkan Kunci API Stability AI Anda</label><input type="password" id="stability-key" placeholder="sk-xxxx" required></div></div>
+                 <div class="form-section"><h3><i class="fa-solid fa-paint-brush"></i> Deskripsi Gambar</h3><div class="input-group"><label for="image-prompt">Prompt Utama</label><textarea id="image-prompt" placeholder="Contoh: A hyper-detailed photorealistic portrait..."></textarea></div><div class="input-group"><label for="negative-prompt">Prompt Negatif</label><input type="text" id="negative-prompt" placeholder="Contoh: blurry, ugly..."></div><div class="grid"><div class="input-group"><label for="style-preset">Gaya Artistik</label><select id="style-preset"><option value="photographic">Fotografi</option><option value="cinematic">Sinematik</option><option value="anime">Anime</option><option value="fantasy-art">Seni Fantasi</option><option value="comic-book">Buku Komik</option><option value="digital-art">Seni Digital</option><option value="3d-model">Model 3D</option></select></div><div class="input-group"><label for="aspect-ratio">Rasio Aspek</label><select id="aspect-ratio"><option value="1:1">Persegi</option><option value="16:9">Lanskap</option><option value="9:16">Potret</option></select></div></div></div>
+                 <button class="btn btn-primary" onclick="generateImage()"><i class="fa-solid fa-camera-retro"></i> Hasilkan Gambar!</button>
+                 <div class="result-pane"><h3><i class="fa-solid fa-image"></i> Hasil Gambar</h3><div id="image-result"><p>Gambar yang dihasilkan akan muncul di sini.</p></div></div>
             </div>
             
-            <!-- Shop Page -->
+            <!-- NEW: Text-to-Speech Page -->
+            <div id="page-tts" class="page">
+                 <div class="page-header"><h2>AI Voice Generator (ElevenLabs)</h2><p>Ubah teks menjadi suara manusia yang natural dan ekspresif.</p></div>
+                 <div class="form-section"><h3><i class="fa-solid fa-key"></i> Kunci API ElevenLabs</h3><div class="input-group"><label for="elevenlabs-key">Masukkan Kunci API ElevenLabs Anda</label><input type="password" id="elevenlabs-key" placeholder="xxxxxxxxxxxx" required></div></div>
+                 <div class="form-section">
+                    <h3><i class="fa-solid fa-microphone"></i> Konfigurasi Suara</h3>
+                    <div class="input-group"><label for="tts-text">Teks yang akan diubah menjadi suara</label><textarea id="tts-text" placeholder="Ketik atau tempel teks Anda di sini..."></textarea></div>
+                    <div class="input-group"><label for="tts-voice">Pilih Suara</label>
+                        <select id="tts-voice">
+                            <!-- Anda bisa menemukan lebih banyak Voice ID di akun ElevenLabs Anda -->
+                            <option value="21m00Tcm4TlvDq8ikWAM">Rachel (American, Calm)</option>
+                            <option value="2EiwWnXFnvU5JabPnv8n">Clyde (American, Deep)</option>
+                            <option value="AZnzlk1XvdvUeBnXmlld">Domi (American, Young)</option>
+                            <option value="EXAVITQu4vr4xnSDxMaL">Bella (British, Soft)</option>
+                            <option value="ErXwobaYiN019PkySvjV">Antoni (American, Well-rounded)</option>
+                            <option value="MF3mGyEYCl7XYWbV9V6O">Elli (American, Emotional)</option>
+                        </select>
+                    </div>
+                 </div>
+                 <button class="btn btn-primary" onclick="generateAudio()"><i class="fa-solid fa-play-circle"></i> Hasilkan Audio!</button>
+                 <div class="audio-result-pane form-section">
+                    <h3><i class="fa-solid fa-music"></i> Hasil Audio</h3>
+                    <div id="audio-result" class="audio-player-container"><p>Pemutar audio akan muncul di sini.</p></div>
+                </div>
+            </div>
+
             <div id="page-shop" class="page">
-                <div class="page-header">
-                    <h2>Shop</h2>
-                    <p>Temukan aset dan layanan premium untuk proyek kreatif Anda.</p>
-                </div>
-                <div class="shop-grid" id="shop-container">
-                    <!-- Item-item shop akan di-render di sini oleh JavaScript -->
-                </div>
+                <div class="page-header"><h2>Shop</h2><p>Temukan aset dan layanan premium untuk proyek kreatif Anda.</p></div>
+                <div class="shop-grid" id="shop-container"></div>
             </div>
 
-            <!-- Payment Page -->
             <div id="page-payment" class="page">
-                 <div class="page-header">
-                    <h2>Beli Kunci API</h2>
-                    <p>Dapatkan kunci API premium untuk akses tak terbatas ke fitur-fitur kami.</p>
-                </div>
-                <div class="payment-container">
-                    <div class="form-section">
-                        <h3><i class="fa-solid fa-file-invoice-dollar"></i> Detail Pembelian</h3>
-                        <p style="color: var(--text-dark); margin-bottom: 1rem;">Selesaikan pembayaran sebesar <strong>Rp. 15.000</strong> ke akun Gopay di bawah ini, lalu isi formulir dan unggah bukti pembayaran Anda.</p>
-                        
-                        <div id="qr-code-container">
-                            <h4>Scan QR Code Gopay</h4>
-                            <!-- GANTI URL GAMBAR INI DENGAN URL QR CODE GOPAY ANDA -->
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=0895340205302" alt="QR Code Gopay">
-                            <p style="font-size: 1.2em; font-weight: bold; margin-top: 1rem;">0895340205302</p>
-                            <p>(a/n Nabila Ahmad Studio)</p>
-                        </div>
-                    </div>
-                    <div class="form-section">
-                        <h3><i class="fa-solid fa-user-check"></i> Konfirmasi Pembayaran</h3>
-                        <form id="payment-form">
-                            <div class="input-group">
-                                <label for="buyer-name">Nama Lengkap Anda</label>
-                                <input type="text" id="buyer-name" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="buyer-email">Alamat Email (untuk pengiriman kunci)</label>
-                                <input type="email" id="buyer-email" required>
-                            </div>
-                            <div class="input-group">
-                                <label for="payment-proof">Unggah Bukti Pembayaran (Gambar)</label>
-                                <input type="file" id="payment-proof" accept="image/*" required>
-                            </div>
-                            <div id="image-preview-container">
-                                <p>Pratinjau gambar...</p>
-                                <img id="image-preview" style="display: none;"/>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">
-                                <i class="fab fa-whatsapp"></i> Kirim Konfirmasi ke Admin
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                 <div class="page-header"><h2>Beli Kunci API</h2><p>Dapatkan kunci API premium untuk akses tak terbatas.</p></div>
+                 <div class="payment-container">
+                    <div class="form-section"><h3><i class="fa-solid fa-file-invoice-dollar"></i> Detail Pembelian</h3><p style="color: var(--text-dark); margin-bottom: 1rem;">Selesaikan pembayaran sebesar <strong>Rp. 15.000</strong> ke akun Gopay di bawah ini, lalu isi formulir dan unggah bukti pembayaran Anda.</p><div id="qr-code-container"><h4>Scan QR Code Gopay</h4><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=0895340205302" alt="QR Code Gopay"><p style="font-size: 1.2em; font-weight: bold; margin-top: 1rem;">0895340205302</p><p>(a/n Nabila Ahmad Studio)</p></div></div>
+                    <div class="form-section"><h3><i class="fa-solid fa-user-check"></i> Konfirmasi Pembayaran</h3><form id="payment-form"><div class="input-group"><label for="buyer-name">Nama Lengkap</label><input type="text" id="buyer-name" required></div><div class="input-group"><label for="buyer-email">Alamat Email</label><input type="email" id="buyer-email" required></div><div class="input-group"><label for="payment-proof">Unggah Bukti Pembayaran</label><input type="file" id="payment-proof" accept="image/*" required></div><div id="image-preview-container"><p>Pratinjau gambar...</p><img id="image-preview" style="display: none;"/></div><button type="submit" class="btn btn-primary" style="margin-top: 1rem;"><i class="fab fa-whatsapp"></i> Kirim Konfirmasi</button></form></div>
+                 </div>
             </div>
-
         </main>
     </div>
 
-    <a href="https://wa.me/6285810526151?text=Halo%20Admin%20Nabila%20Studio%20Development" target="_blank" class="whatsapp-fab"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/6285810526151?text=Halo%20Admin%20Nabila%20Studio" target="_blank" class="whatsapp-fab"><i class="fab fa-whatsapp"></i></a>
 
     <script>
-    // --- PENANDA UNTUK ANDA: MULAI EDIT ITEM SHOP DI SINI ---
+    // --- PENANDA: EDIT ITEM SHOP DI SINI ---
     const shopItems = [
-        {
-            // Ganti dengan URL gambar produk Anda
-            imageUrl: 'https://via.placeholder.com/300x200.png?text=Paket+Novel+AI',
-            // Ganti dengan nama produk Anda
-            title: 'Paket Kunci API Novel AI Pro',
-            // Ganti dengan deskripsi produk Anda
-            description: 'Akses tanpa batas ke fitur AI Novel Writer selama 30 hari. Termasuk model GPT-4o dan dukungan prioritas.',
-            // Ganti dengan harga produk Anda
-            price: 'Rp. 50.000',
-            // Ganti dengan URL halaman pembelian atau kontak Anda
-            buyUrl: '#'
-        },
-        {
-            imageUrl: 'https://via.placeholder.com/300x200.png?text=Paket+Gambar+AI',
-            title: 'Paket Kunci API Image AI Pro',
-            description: '1000 kredit untuk menghasilkan gambar dengan Stability AI. Tanpa watermark dan resolusi penuh.',
-            price: 'Rp. 75.000',
-            buyUrl: '#'
-        },
-        {
-            imageUrl: 'https://via.placeholder.com/300x200.png?text=Layanan+Prompt',
-            title: 'Jasa Konsultasi Prompt Engineering',
-            description: 'Sesi 1-on-1 dengan ahli kami untuk membantu Anda membuat prompt AI yang sempurna untuk kebutuhan spesifik Anda.',
-            price: 'Hubungi Kami',
-            buyUrl: 'https://wa.me/6285810526151'
-        },
-        // --- Salin dan tempel blok di atas untuk menambahkan lebih banyak item ---
+        { imageUrl: 'https://via.placeholder.com/300x200.png?text=Paket+AI+Writer', title: 'Paket Kunci API Cohere Pro', description: 'Akses tanpa batas ke fitur AI Novel Writer selama 30 hari. Termasuk model Command R+ dan dukungan prioritas.', price: 'Rp. 50.000', buyUrl: '#' },
+        { imageUrl: 'https://via.placeholder.com/300x200.png?text=Paket+AI+Image', title: 'Paket Kunci API Stability AI Pro', description: '1000 kredit untuk menghasilkan gambar. Tanpa watermark dan resolusi penuh.', price: 'Rp. 75.000', buyUrl: '#' },
+        { imageUrl: 'https://via.placeholder.com/300x200.png?text=Paket+AI+Voice', title: 'Paket Kunci API ElevenLabs Pro', description: '100.000 karakter untuk text-to-speech. Termasuk akses ke semua suara premium.', price: 'Rp. 60.000', buyUrl: '#' },
     ];
-    // --- AKHIR AREA EDIT ITEM SHOP ---
 
     document.addEventListener('DOMContentLoaded', () => {
-        // Render shop items on page load
+        // --- GLOBAL DOM ELEMENTS ---
+        const dom = {
+            navLinks: document.querySelectorAll('.nav-link'),
+            cohereKeyInput: document.getElementById('cohere-key'),
+            stabilityKeyInput: document.getElementById('stability-key'),
+            elevenlabsKeyInput: document.getElementById('elevenlabs-key'),
+            novelForm: document.getElementById('novel-form'),
+            novelOutputArea: document.getElementById('novel-output-area'),
+            generateNovelBtn: document.getElementById('generate-novel-btn'),
+            chapterNumberDisplay: document.getElementById('chapter-number-display'),
+            continueBtn: document.getElementById('continue-btn'),
+            newChapterBtn: document.getElementById('new-chapter-btn'),
+            saveChapterBtn: document.getElementById('save-chapter-btn'),
+            chapterHistoryList: document.getElementById('chapter-history-list'),
+            paymentForm: document.getElementById('payment-form'),
+            paymentProofInput: document.getElementById('payment-proof'),
+            imagePreview: document.getElementById('image-preview'),
+            stats: {
+                chapters: document.getElementById('stat-chapters'),
+                images: document.getElementById('stat-images'),
+                audios: document.getElementById('stat-audios'),
+                apiStatus: document.getElementById('stat-api-status')
+            }
+        };
+
+        // --- GLOBAL APP STATE ---
+        let state = {
+            story: { fullStoryContext: "", currentChapterNumber: 1, chapters: {}, isGenerating: false },
+            stats: { imagesGenerated: 0, audiosGenerated: 0 }
+        };
+
+        // --- INITIALIZATION ---
         renderShopItems();
+        loadApiKeys();
+        updateDashboardStats();
 
-        // DOM Elements
-        const navLinks = document.querySelectorAll('.nav-link');
-        const openaiKeyInput = document.getElementById('openai-key');
-        const stabilityKeyInput = document.getElementById('stability-key');
-        const novelForm = document.getElementById('novel-form');
-        const novelOutputArea = document.getElementById('novel-output-area');
-        const generateNovelBtn = document.getElementById('generate-novel-btn');
-        const chapterNumberDisplay = document.getElementById('chapter-number-display');
-        const continueBtn = document.getElementById('continue-btn');
-        const newChapterBtn = document.getElementById('new-chapter-btn');
-        const saveChapterBtn = document.getElementById('save-chapter-btn');
-        const chapterHistoryList = document.getElementById('chapter-history-list');
-        const paymentForm = document.getElementById('payment-form');
-        const paymentProofInput = document.getElementById('payment-proof');
-        const imagePreview = document.getElementById('image-preview');
-
-        // App State
-        let storyState = { fullStoryContext: "", currentChapterNumber: 1, chapters: {}, isGenerating: false };
-
-        // --- NAVIGATION LOGIC ---
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const pageId = link.getAttribute('data-page');
-                navigateToPage(pageId, link);
-            });
-        });
-
-        // --- DASHBOARD STATS UPDATE ---
-        function updateDashboardStats() {
-            document.getElementById('stat-chapters').textContent = Object.keys(storyState.chapters).length;
-            const keyStatus = (localStorage.getItem('openaiApiKey') || localStorage.getItem('stabilityApiKey')) ? 'Tersedia' : 'Belum Ada';
-            const statusElement = document.getElementById('stat-api-status');
-            statusElement.textContent = keyStatus;
-            statusElement.style.color = keyStatus === 'Tersedia' ? '#28a745' : '#dc3545';
-        }
-        updateDashboardStats(); // Initial call
+        // --- EVENT LISTENERS ---
+        dom.navLinks.forEach(link => link.addEventListener('click', e => { e.preventDefault(); navigateToPage(link.dataset.page, link); }));
+        dom.cohereKeyInput.addEventListener('change', e => saveApiKey('cohereApiKey', e.target.value));
+        dom.stabilityKeyInput.addEventListener('change', e => saveApiKey('stabilityApiKey', e.target.value));
+        dom.elevenlabsKeyInput.addEventListener('change', e => saveApiKey('elevenlabsApiKey', e.target.value));
+        dom.novelForm.addEventListener('submit', e => { e.preventDefault(); generateNovelChapter(); });
+        dom.continueBtn.addEventListener('click', () => generateNovelChapter(true));
+        dom.newChapterBtn.addEventListener('click', startNewChapter);
+        dom.saveChapterBtn.addEventListener('click', saveChapterToFile);
+        dom.paymentProofInput.addEventListener('change', handleImagePreview);
+        dom.paymentForm.addEventListener('submit', handlePaymentConfirmation);
 
         // --- KEY MANAGEMENT ---
-        openaiKeyInput.value = localStorage.getItem('openaiApiKey') || '';
-        stabilityKeyInput.value = localStorage.getItem('stabilityApiKey') || '';
-        openaiKeyInput.addEventListener('change', (e) => { localStorage.setItem('openaiApiKey', e.target.value); updateDashboardStats(); });
-        stabilityKeyInput.addEventListener('change', (e) => { localStorage.setItem('stabilityApiKey', e.target.value); updateDashboardStats(); });
-
-        // --- SHOP RENDER LOGIC ---
-        function renderShopItems() {
-            const container = document.getElementById('shop-container');
-            if (!container) return;
-            container.innerHTML = '';
-            shopItems.forEach(item => {
-                const itemHtml = `
-                    <div class="shop-item">
-                        <img src="${item.imageUrl}" alt="${item.title}" class="shop-item-image">
-                        <div class="shop-item-content">
-                            <h4>${item.title}</h4>
-                            <p>${item.description}</p>
-                            <div class="shop-item-footer">
-                                <span class="shop-item-price">${item.price}</span>
-                                <a href="${item.buyUrl}" target="_blank" class="btn btn-primary shop-item-btn">Beli</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                container.innerHTML += itemHtml;
-            });
+        function loadApiKeys() {
+            dom.cohereKeyInput.value = localStorage.getItem('cohereApiKey') || '';
+            dom.stabilityKeyInput.value = localStorage.getItem('stabilityApiKey') || '';
+            dom.elevenlabsKeyInput.value = localStorage.getItem('elevenlabsApiKey') || '';
         }
-        
-        // --- PAYMENT FORM LOGIC ---
-        paymentProofInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                imagePreview.style.display = 'block';
-                imagePreview.previousElementSibling.style.display = 'none';
-                reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
-        paymentForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('buyer-name').value;
-            const email = document.getElementById('buyer-email').value;
-            const proofFile = paymentProofInput.files[0];
-
-            if (!name || !email || !proofFile) {
-                Swal.fire('Error', 'Harap isi semua kolom dan unggah bukti pembayaran.', 'error');
-                return;
-            }
-
-            const adminPhoneNumber = '6285810526151'; // Admin WA Number
-            const message = `Halo Admin Nabila Studio Development,
-
-Saya ingin konfirmasi pembelian Kunci API Premium.
-Berikut detailnya:
---------------------------
-Nama: *${name}*
-Email: *${email}*
-Total Pembayaran: *Rp. 15.000*
---------------------------
-
-Bukti pembayaran saya lampirkan bersama pesan ini. Mohon segera diproses. Terima kasih!`;
-            
-            const whatsappUrl = `https://wa.me/${adminPhoneNumber}?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappUrl, '_blank');
-
-            Swal.fire({
-                icon: 'success',
-                title: 'Redirect ke WhatsApp!',
-                html: 'Anda akan diarahkan ke WhatsApp untuk mengirim detail pesanan. <br><br><b>PENTING:</b> Jangan lupa untuk <b>melampirkan (attach) gambar bukti pembayaran</b> Anda secara manual di dalam chat WhatsApp.',
-                confirmButtonText: 'Saya Mengerti!'
-            });
-        });
-
-        // --- NOVEL WRITER LOGIC (Existing functionality) ---
-        novelForm.addEventListener('submit', (e) => { e.preventDefault(); generateNovelChapter(); });
-        continueBtn.addEventListener('click', () => generateNovelChapter(true));
-        newChapterBtn.addEventListener('click', startNewChapter);
-        saveChapterBtn.addEventListener('click', saveChapterToFile);
-
-        function buildNovelPrompt(isContinuation) {
-            const getVal = (id) => document.getElementById(id).value;
-            let systemPrompt = `Anda adalah seorang penulis sastra ahli bernama ${getVal('author') || 'Nabila Ahmad'}. Anda menulis novel dengan gaya yang imersif, puitis, dan penuh kaidah sastra (simbolisme, prosa, dialog mendalam, narasi kaya). Anda selalu menulis dalam Bahasa Indonesia yang baku dan indah.`;
-            if (isContinuation) {
-                return { systemPrompt, userPrompt: `Konteks Cerita Sejauh Ini:\n${storyState.fullStoryContext}\n\nLanjutkan menulis cerita dari titik terakhir persis di bawah ini. Pastikan transisinya mulus.\n\n---\n${novelOutputArea.value}` };
-            }
-            let storyContextPrompt = storyState.fullStoryContext ? `Berikut adalah ringkasan cerita dari bab-bab sebelumnya sebagai konteks:\n<konteks>\n${storyState.fullStoryContext}\n</konteks>\n\n` : '';
-            let userPrompt = `${storyContextPrompt}Sekarang, tulis **Bab ${storyState.currentChapterNumber}** secara lengkap (target 6000-7000 kata).
-# PROMPT UNTUK BAB ${storyState.currentChapterNumber}
-**Genre:** ${getVal('genre')} | **Setting:** ${getVal('setting')}
-## FOKUS BAB INI
-1. **Latar Konflik:** ${getVal('conflict-bg')}
-2. **Konflik Utama:** ${getVal('conflict')}
-3. **Klimaks:** ${getVal('climax')}
-4. **Plot Twist:** ${getVal('plot-twist') || 'Tidak ada'}
-5. **Resolusi:** ${getVal('resolution')}
-## PENGEMBANGAN
-- **Cerita:** ${getVal('story-dev')}
-- **Karakter:** ${getVal('char-dev')}
-## KARAKTER TERLIBAT
-- **Protagonis:** ${getVal('protagonist')} | **Antagonis:** ${getVal('antagonist')} | **Foil:** ${getVal('foil')}
-- **Lainnya:** ${getVal('other-chars')}
----
-Mulai tulis Bab ${storyState.currentChapterNumber} dengan judul yang menarik.`;
-            return { systemPrompt, userPrompt };
-        }
-
-        async function generateNovelChapter(isContinuation = false) { /* ... existing stream logic ... */ }
-        function setGenerationState(isGenerating) { /* ... existing state logic ... */ }
-        function startNewChapter() { /* ... existing logic, add updateDashboardStats() call ... */ }
-        function updateChapterHistory() { /* ... existing logic ... */ }
-        function saveChapterToFile() { /* ... existing logic ... */ }
-
-        // Placeholder for existing functions to avoid breaking the script
-        async function generateNovelChapter(isContinuation = false) {
-            if (storyState.isGenerating) return;
-            const apiKey = openaiKeyInput.value;
-            if (!apiKey) { Swal.fire('Error', 'Harap masukkan Kunci API OpenAI Anda.', 'error'); return; }
-            setGenerationState(true);
-            if (!isContinuation) novelOutputArea.value = `Menyiapkan AI untuk menulis Bab ${storyState.currentChapterNumber}...\n`;
-            const { systemPrompt, userPrompt } = buildNovelPrompt(isContinuation);
-            try {
-                const response = await fetch("https://api.openai.com/v1/chat/completions", {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
-                    body: JSON.stringify({ model: "gpt-4o", messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userPrompt }], stream: true }),
-                });
-                if (!response.ok) { const errorData = await response.json(); throw new Error(`API Error: ${response.status} - ${errorData.error.message}`); }
-                const reader = response.body.getReader();
-                const decoder = new TextDecoder();
-                if (!isContinuation) novelOutputArea.value = "";
-                while (true) {
-                    const { value, done } = await reader.read(); if (done) break;
-                    const chunk = decoder.decode(value); const lines = chunk.split('\n');
-                    const parsedLines = lines.map(line => line.replace(/^data: /, '').trim()).filter(line => line !== "" && line !== "[DONE]").map(line => JSON.parse(line));
-                    for (const parsedLine of parsedLines) { const { choices } = parsedLine; const { delta } = choices[0]; const { content } = delta; if (content) { novelOutputArea.value += content; novelOutputArea.scrollTop = novelOutputArea.scrollHeight; } }
-                }
-            } catch (error) { console.error("Streaming error:", error); Swal.fire('Streaming Error', error.message, 'error'); } finally { setGenerationState(false); }
-        }
-        function setGenerationState(isGenerating) {
-            storyState.isGenerating = isGenerating; generateNovelBtn.disabled = isGenerating;
-            generateNovelBtn.innerHTML = isGenerating ? '<i class="fa-solid fa-spinner fa-spin"></i> Menulis...' : `<i class="fa-solid fa-wand-magic-sparkles"></i> Tulis Bab ${storyState.currentChapterNumber}!`;
-            continueBtn.style.display = !isGenerating && novelOutputArea.value ? 'block' : 'none'; newChapterBtn.style.display = !isGenerating && novelOutputArea.value ? 'block' : 'none'; saveChapterBtn.style.display = !isGenerating && novelOutputArea.value ? 'block' : 'none';
-        }
-        function startNewChapter() {
-            const content = novelOutputArea.value; if (content) { storyState.chapters[storyState.currentChapterNumber] = content; storyState.fullStoryContext += `\n\n--- Ringkasan Bab ${storyState.currentChapterNumber} ---\n` + content.substring(0, 1000) + '...'; updateChapterHistory(); }
-            storyState.currentChapterNumber++; chapterNumberDisplay.textContent = storyState.currentChapterNumber;
-            novelOutputArea.value = ""; setGenerationState(storyState.isGenerating);
-            Swal.fire('Siap untuk Bab Baru!', `Sekarang isi detail plot untuk Bab ${storyState.currentChapterNumber}.`, 'success');
-        }
-        function updateChapterHistory() {
-            chapterHistoryList.innerHTML = "";
-            for (const chapterNum in storyState.chapters) { const li = document.createElement('li'); li.textContent = `Bab ${chapterNum}`; li.onclick = () => { novelOutputArea.value = storyState.chapters[chapterNum]; }; chapterHistoryList.appendChild(li); }
+        function saveApiKey(keyName, value) {
+            localStorage.setItem(keyName, value);
             updateDashboardStats();
         }
-        function saveChapterToFile() { const content = novelOutputArea.value; if (!content) return; const blob = new Blob([content], { type: 'text/plain;charset=utf-8' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = `Bab_${storyState.currentChapterNumber}_Novel.txt`; link.click(); }
+
+        // --- DASHBOARD & NAVIGATION ---
+        function updateDashboardStats() {
+            dom.stats.chapters.textContent = Object.keys(state.story.chapters).length;
+            dom.stats.images.textContent = state.stats.imagesGenerated;
+            dom.stats.audios.textContent = state.stats.audiosGenerated;
+            const keyStatus = (localStorage.getItem('cohereApiKey') || localStorage.getItem('stabilityApiKey') || localStorage.getItem('elevenlabsApiKey')) ? 'Tersedia' : 'Belum Ada';
+            dom.stats.apiStatus.textContent = keyStatus;
+            dom.stats.apiStatus.style.color = keyStatus === 'Tersedia' ? '#28a745' : '#dc3545';
+        }
         
-        // --- IMAGE GENERATOR LOGIC ---
-        window.generateImage = async function() { /* ... existing logic ... */ }
+        window.navigateToPage = function(pageId, clickedLink = null) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            const linkToActivate = clickedLink || document.querySelector(`.nav-link[data-page="${pageId}"]`);
+            if (linkToActivate) linkToActivate.classList.add('active');
+        }
+
+        // --- SHOP & PAYMENT LOGIC ---
+        function renderShopItems() { /* identical to previous version */ }
+        function handleImagePreview() { /* identical to previous version */ }
+        function handlePaymentConfirmation(e) { /* identical to previous version */ }
+        
+        // --- NOVEL WRITER LOGIC (COHERE API) ---
+        function buildNovelPrompt(isContinuation) {
+            const getVal = id => document.getElementById(id).value;
+            const preamble = `Anda adalah seorang penulis sastra ahli bernama ${getVal('author') || 'Nabila Ahmad'}. Anda menulis novel dengan gaya yang imersif, puitis, dan penuh kaidah sastra (simbolisme, prosa, dialog mendalam, narasi kaya). Anda selalu menulis dalam Bahasa Indonesia yang baku dan indah. Anda tidak pernah mengulangi prompt atau instruksi dalam respons Anda.`;
+            if (isContinuation) {
+                return { preamble, message: `Konteks Cerita Sejauh Ini:\n${state.story.fullStoryContext}\n\nLanjutkan menulis cerita dari titik terakhir persis di bawah ini. Pastikan transisinya mulus.\n\n---\n${dom.novelOutputArea.value}` };
+            }
+            let storyContext = state.story.fullStoryContext ? `Konteks dari bab-bab sebelumnya:\n<konteks>\n${state.story.fullStoryContext}\n</konteks>\n\n` : '';
+            const message = `${storyContext}Tulis **Bab ${state.story.currentChapterNumber}** secara lengkap (target 6000-7000 kata).
+# PROMPT BAB ${state.story.currentChapterNumber}
+- **Genre:** ${getVal('genre')}
+- **Setting:** ${getVal('setting')}
+- **Latar Konflik:** ${getVal('conflict-bg')}
+- **Konflik Utama:** ${getVal('conflict')}
+- **Klimaks:** ${getVal('climax')}
+- **Resolusi:** ${getVal('resolution')}
+- **Pengembangan:** Cerita: ${getVal('story-dev')}, Karakter: ${getVal('char-dev')}
+- **Karakter:** Protagonis: ${getVal('protagonist')}, Antagonis: ${getVal('antagonist')}
+---
+Mulai tulis Bab ${state.story.currentChapterNumber} dengan judul menarik, langsung ke narasi.`;
+            return { preamble, message };
+        }
+
+        async function generateNovelChapter(isContinuation = false) {
+            if (state.story.isGenerating) return;
+            const apiKey = dom.cohereKeyInput.value;
+            if (!apiKey) { Swal.fire('Error', 'Harap masukkan Kunci API Cohere Anda.', 'error'); return; }
+            setGenerationState(true, true);
+            if (!isContinuation) dom.novelOutputArea.value = `Menghubungi AI Cohere untuk menulis Bab ${state.story.currentChapterNumber}...\n`;
+            
+            const { preamble, message } = buildNovelPrompt(isContinuation);
+
+            try {
+                const response = await fetch("https://api.cohere.com/v1/chat", {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+                    body: JSON.stringify({ message, preamble, stream: true, }),
+                });
+
+                if (!response.ok) { const errorText = await response.text(); throw new Error(`API Error: ${response.status} - ${errorText}`); }
+                
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                if (!isContinuation) dom.novelOutputArea.value = "";
+
+                while (true) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+                    const chunk = decoder.decode(value, { stream: true });
+                    try {
+                        const lines = chunk.split('\n');
+                        for (const line of lines) {
+                            if (line.trim()) {
+                                const parsed = JSON.parse(line);
+                                if (parsed.event_type === "text-generation" && parsed.text) {
+                                    dom.novelOutputArea.value += parsed.text;
+                                    dom.novelOutputArea.scrollTop = dom.novelOutputArea.scrollHeight;
+                                }
+                            }
+                        }
+                    } catch (e) { /* Incomplete JSON chunk, wait for next */ }
+                }
+            } catch (error) { console.error("Cohere Streaming error:", error); Swal.fire('Streaming Error', error.message, 'error');
+            } finally { setGenerationState(true, false); }
+        }
+
+        function setGenerationState(isNovel, isGenerating) {
+            if (isNovel) {
+                state.story.isGenerating = isGenerating;
+                dom.generateNovelBtn.disabled = isGenerating;
+                dom.generateNovelBtn.innerHTML = isGenerating ? '<i class="fa-solid fa-spinner fa-spin"></i> Menulis...' : `<i class="fa-solid fa-wand-magic-sparkles"></i> Tulis Bab ${state.story.currentChapterNumber}!`;
+                const displayStyle = !isGenerating && dom.novelOutputArea.value ? 'block' : 'none';
+                dom.continueBtn.style.display = displayStyle;
+                dom.newChapterBtn.style.display = displayStyle;
+                dom.saveChapterBtn.style.display = displayStyle;
+            }
+        }
+        
+        function startNewChapter() {
+            const content = dom.novelOutputArea.value;
+            if (content) {
+                state.story.chapters[state.story.currentChapterNumber] = content;
+                state.story.fullStoryContext += `\n\n--- Ringkasan Bab ${state.story.currentChapterNumber} ---\n` + content.substring(0, 1000) + '...';
+                updateChapterHistory();
+            }
+            state.story.currentChapterNumber++;
+            dom.chapterNumberDisplay.textContent = state.story.currentChapterNumber;
+            dom.novelOutputArea.value = "";
+            setGenerationState(true, false);
+            Swal.fire('Siap untuk Bab Baru!', `Sekarang isi detail plot untuk Bab ${state.story.currentChapterNumber}.`, 'success');
+        }
+
+        function updateChapterHistory() {
+            dom.chapterHistoryList.innerHTML = "";
+            for (const chapterNum in state.story.chapters) {
+                const li = document.createElement('li');
+                li.textContent = `Bab ${chapterNum}`;
+                li.onclick = () => { dom.novelOutputArea.value = state.story.chapters[chapterNum]; };
+                dom.chapterHistoryList.appendChild(li);
+            }
+            updateDashboardStats();
+        }
+
+        function saveChapterToFile() {
+            const content = dom.novelOutputArea.value; if (!content) return;
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a'); link.href = URL.createObjectURL(blob);
+            link.download = `Bab_${state.story.currentChapterNumber}_Novel.txt`; link.click();
+        }
+
+        // --- IMAGE GENERATOR LOGIC (STABILITY AI) ---
         window.generateImage = async function() {
-            const apiKey = stabilityKeyInput.value; const prompt = document.getElementById('image-prompt').value;
+            const apiKey = dom.stabilityKeyInput.value; const prompt = document.getElementById('image-prompt').value;
             if (!apiKey || !prompt) { Swal.fire('Error', 'Harap masukkan Kunci API Stability dan Prompt Gambar.', 'error'); return; }
             Swal.fire({ title: 'Sedang Menghasilkan...', html: 'Mohon tunggu, AI sedang melukis... <i class="fa-solid fa-spinner fa-spin"></i>', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
             const ratio = document.getElementById('aspect-ratio').value.split(':'); let width, height;
@@ -643,21 +487,57 @@ Mulai tulis Bab ${storyState.currentChapterNumber} dengan judul yang menarik.`;
                 const resultContainer = document.getElementById('image-result'); resultContainer.innerHTML = ''; const base64Image = artifacts[0].base64; const imgElement = document.createElement('img'); imgElement.src = `data:image/png;base64,${base64Image}`;
                 const downloadBtn = document.createElement('a'); downloadBtn.href = imgElement.src; downloadBtn.download = `nabila-studio-ai-image.png`; downloadBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download'; downloadBtn.className = 'btn'; downloadBtn.id = 'download-image-btn';
                 resultContainer.appendChild(imgElement); resultContainer.appendChild(downloadBtn);
+                state.stats.imagesGenerated++; updateDashboardStats();
             } catch (error) { console.error(error); Swal.fire('Terjadi Kesalahan', 'Gagal menghasilkan gambar. Periksa kunci API Anda. Detail: ' + error.message, 'error'); }
         }
-    });
 
-    // Global navigation function
-    function navigateToPage(pageId, clickedLink = null) {
-        document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-        if (clickedLink) {
-            clickedLink.classList.add('active');
-        } else {
-            document.querySelector(`.nav-link[data-page="${pageId}"]`).classList.add('active');
+        // --- TEXT-TO-SPEECH LOGIC (ELEVENLABS) ---
+        window.generateAudio = async function() {
+            const apiKey = dom.elevenlabsKeyInput.value;
+            const text = document.getElementById('tts-text').value;
+            const voiceId = document.getElementById('tts-voice').value;
+            if (!apiKey || !text) { Swal.fire('Error', 'Harap masukkan Kunci API ElevenLabs dan teksnya.', 'error'); return; }
+            Swal.fire({ title: 'Menghasilkan Audio...', html: 'Mohon tunggu, AI sedang berbicara... <i class="fa-solid fa-spinner fa-spin"></i>', allowOutsideClick: false, didOpen: () => Swal.showLoading() });
+            
+            const url = `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`;
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'audio/mpeg', 'xi-api-key': apiKey },
+                    body: JSON.stringify({ text, model_id: 'eleven_multilingual_v2', voice_settings: { stability: 0.5, similarity_boost: 0.75 } }),
+                });
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status} - ${await response.text()}`);
+                
+                const audioBlob = await response.blob();
+                const audioUrl = URL.createObjectURL(audioBlob);
+                Swal.close();
+
+                const audioResultContainer = document.getElementById('audio-result');
+                audioResultContainer.innerHTML = `
+                    <audio controls autoplay src="${audioUrl}"></audio>
+                    <a href="${audioUrl}" download="nabila-studio-audio.mp3" class="btn" style="margin-top: 1rem; width: auto; padding: 0.5rem 1rem;"><i class="fa-solid fa-download"></i> Download Audio</a>
+                `;
+                state.stats.audiosGenerated++; updateDashboardStats();
+
+            } catch(error) { console.error(error); Swal.fire('Terjadi Kesalahan', 'Gagal menghasilkan audio. Periksa kunci API Anda. Detail: ' + error.message, 'error'); }
         }
-    }
+
+        // --- UTILITY FUNCTIONS ---
+        // (These are kept from the previous version for payment form functionality)
+        function renderShopItems() {
+            const container = document.getElementById('shop-container'); if (!container) return; container.innerHTML = '';
+            shopItems.forEach(item => { container.innerHTML += `<div class="shop-item"><img src="${item.imageUrl}" alt="${item.title}" class="shop-item-image"><div class="shop-item-content"><h4>${item.title}</h4><p>${item.description}</p><div class="shop-item-footer"><span class="shop-item-price">${item.price}</span><a href="${item.buyUrl}" target="_blank" class="btn btn-primary shop-item-btn">Beli</a></div></div></div>`; });
+        }
+        function handleImagePreview() { const file = this.files[0]; if (file) { const reader = new FileReader(); dom.imagePreview.style.display = 'block'; dom.imagePreview.previousElementSibling.style.display = 'none'; reader.onload = e => { dom.imagePreview.src = e.target.result; }; reader.readAsDataURL(file); } }
+        function handlePaymentConfirmation(e) {
+            e.preventDefault(); const name = document.getElementById('buyer-name').value; const email = document.getElementById('buyer-email').value; const proofFile = dom.paymentProofInput.files[0];
+            if (!name || !email || !proofFile) { Swal.fire('Error', 'Harap isi semua kolom dan unggah bukti pembayaran.', 'error'); return; }
+            const adminPhoneNumber = '6285810526151';
+            const message = `Halo Admin Nabila Studio Development,\n\nSaya ingin konfirmasi pembelian Kunci API Premium.\nDetail:\nNama: *${name}*\nEmail: *${email}*\nTotal: *Rp. 15.000*\n\nBukti pembayaran saya lampirkan. Mohon diproses. Terima kasih!`;
+            window.open(`https://wa.me/${adminPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+            Swal.fire({ icon: 'success', title: 'Redirect ke WhatsApp!', html: '<b>PENTING:</b> Jangan lupa untuk <b>melampirkan gambar bukti pembayaran</b> Anda di dalam chat WhatsApp.', confirmButtonText: 'Saya Mengerti!' });
+        }
+    });
     </script>
 </body>
-</html>
+    </html>
